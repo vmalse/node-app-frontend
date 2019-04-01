@@ -7,6 +7,7 @@ services:
 
 before_install :
   - docker build -t vmalse/docker-react -f Dockerfile.dev .
+  - docker build .
 #above says what needs to happen before we deploy our project or run our test
 
 script :
@@ -16,7 +17,7 @@ script :
 - docker run vmalse/docker-react npm run test -- --coverage
 #the only problem here is that "npm run test" wait for input from the user and doesn't terminate itself automatically, and to make it stop automatically we will use -- --coverage
 
-   - docker build .
+#   - docker build .
 
 deploy:
   provider: elasticbeanstalk
