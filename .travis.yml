@@ -6,10 +6,10 @@ services:
 #above says we need the docker cli installed so it will install a copy of docker into the running container
 
 #before_install :
-  - docker build .
+  - docker build -t vmalse/docker-react .
 #above says what needs to happen before we deploy our project or run our test
 
-#script :
+script :
 # will tell how to run the test suite
 # if from any of the below commands it gets any return code other than 0 then its going to assume that the process has failed
 
@@ -20,13 +20,13 @@ services:
 
 deploy:
   provider: elasticbeanstalk
-  region: "us-east-2"
-  app: "docker-react-one-demo"
-  env: "DockerReactOneDemo-env" 
+  region: us-east-2
+  app: DockerReactOneDemo
+  env: DockerReactOneDemo-env 
   bucket-name: elasticbeanstalk-us-east-2-563953357779
-  bucket-path: "docker-react-one-demo"
+  bucket-path: DockerReactOneDemo
   on:
     branch: master
-  access_key_id: "$AWS_ACCESS_KEY" 
+  access_key_id: $AWS_ACCESS_KEY
   secret_access_key: 
-   secure: "$AWS_SECRET_KEY" 
+   secure: $AWS_SECRET_KEY
