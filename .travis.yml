@@ -21,10 +21,10 @@ script :
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "DockerReactOneDemo"
+  app: "docker-react-one-demo"
   env: "DockerReactOneDemo-env" 
   bucket-name: elasticbeanstalk-us-east-2-563953357779
-  bucket-path: "DockerReactOneDemo"
+  bucket-path: "docker-react-one-demo"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
