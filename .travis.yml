@@ -13,7 +13,7 @@ script :
 # will tell how to run the test suite
 # if from any of the below commands it gets any return code other than 0 then its going to assume that the process has failed
 
-- docker run vmalse/docker-react npm run test -- --coverage
+#- docker run vmalse/docker-react npm run test -- --coverage
 #the only problem here is that "npm run test" wait for input from the user and doesn't terminate itself automatically, and to make it stop automatically we will use -- --coverage
 
 deploy:
