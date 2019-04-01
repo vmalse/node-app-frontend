@@ -18,7 +18,7 @@ script :
 
 deploy:
   provider: elasticbeanstalk
-  region: “us-east-2”
+  region: us-east-2
   app: “docker1”
   env: “Docker1-env” 
   bucket-name: “elasticbeanstalk-us-east-2-563953357779”
