@@ -1,7 +1,7 @@
 FROM node:alpine as builder
 # we are tagging the phase so everything under this can be referred by builder
 WORKDIR '/app'
-COPY package.json .
+COPY package*.json ./ 
 RUN npm install
 COPY . .
 RUN npm run build
