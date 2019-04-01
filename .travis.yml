@@ -6,7 +6,7 @@ services:
 #above says we need the docker cli installed so it will install a copy of docker into the running container
 
 before_install :
-  - docker build -t vmalse/docker-react Dockerfile . 
+  - docker build . 
 #above says what needs to happen before we deploy our project or run our test
 
 script :
