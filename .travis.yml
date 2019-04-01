@@ -16,6 +16,8 @@ script :
 #- docker run vmalse/docker-react npm run test -- --coverage
 #the only problem here is that "npm run test" wait for input from the user and doesn't terminate itself automatically, and to make it stop automatically we will use -- --coverage
 
+   - docker build .
+
 deploy:
   provider: elasticbeanstalk
   region: us-east-2
