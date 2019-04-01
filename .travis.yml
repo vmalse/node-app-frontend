@@ -1,0 +1,16 @@
+sudo: required
+#above says we need to have superuser-level permission to make this working
+
+services:
+  - docker
+#above says we need the docker cli installed so it will install a copy of docker into the running container
+
+before_install :
+  - docker build -t vmalse/docker-react -f Dockerfile.dev .
+#above says what needs to happen before we deploy our project or run our test
+
+script :
+# will tell how to run the test suite
+# if from any of the below commands it gets any return code other than 0 then its going to assume that the process has failed
+
+- docker run vmalse/docker-react npm run test -- --coverage
