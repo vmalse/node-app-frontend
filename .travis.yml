@@ -6,14 +6,14 @@ services:
 #above says we need the docker cli installed so it will install a copy of docker into the running container
 
 before_install :
-  - docker build -t vmalse/docker-react Dockerfile.dev .
+#  - docker build -t vmalse/docker-react Dockerfile.dev .
 #above says what needs to happen before we deploy our project or run our test
 
 script :
 # will tell how to run the test suite
 # if from any of the below commands it gets any return code other than 0 then its going to assume that the process has failed
 
-- docker run vmalse/docker-react npm run test -- --coverage
+#- docker run vmalse/docker-react npm run test -- --coverage
 #the only problem here is that "npm run test" wait for input from the user and doesn't terminate itself automatically, and to make it stop automatically we will use -- --coverage
 
    - docker build .
